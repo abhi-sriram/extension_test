@@ -1,0 +1,63 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "WhiteCarrot Extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Review candidate submissions in ease.",
+  "icons": {
+    "16": "icons/wc-icon-16.png",
+    "19": "icons/wc-icon-19.png",
+    "38": "icons/wc-icon-38.png",
+    "48": "icons/wc-icon-dark-48.png",
+    "128": "icons/wc-icon-dark-128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self';connect-src 'self' https://*.whitecarrot.io; frame-src https://*.whitecarrot.io;script-src 'self'; style-src 'self' 'unsafe-inline'"
+  },
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "worker_wrapper.js"
+  },
+  "action": {
+    "default_title": "WhiteCarrot Review",
+    "default_icon": {
+      "19": "icons/wc-icon-dark-19.png",
+      "38": "icons/wc-icon-dark-38.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lever.co/*", "https://hire.lever.co/*", "https://hire.stage.lever.co/*", "https://hire.eu.lever.co/*", "https://hire.sandbox.lever.co/*"],
+      "js": ["check_install.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["wrapper.js"],
+      "css": ["wrapper.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "loading.html",
+      "panel.html",
+      "panel.js",
+      "toast.html",
+      "toast.js",
+      "icons/*.png",
+      "fonts/*.woff"
+    ],
+    "matches": ["http://*/*", "https://*/*"],
+    "extension_ids": []
+  }]
+}

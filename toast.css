@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'Meta-Caps';
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/MetaScWeb-Normal.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Meta';
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/MetaWeb-Light.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+.wc-hire-toast img {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 34px;
+  width: 34px;
+  display: inline-block;
+}
+
+div.l-action:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 45px;
+  height: 45px;
+  content: '';
+  background-color: transparent;
+}
+
+div.l-action {
+  font: 14px/1.4em 'Meta', sans-serif;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+  color: #9647FF;
+  cursor: pointer;
+}
+
+div.l-action.create, div.l-action.refer {
+  line-height: 25px;
+}
+
+div.l-action.match, div.l-action.link > span {
+  padding-left: 10px;
+  text-decoration: underline;
+}
+
+div.l-action > button {
+  font: 14px/1.4em 'Meta-Caps', sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  line-height: 1.33;
+  margin-left: 20px;
+  color: white;
+  background: #9647FF;
+  border: 1px solid #9647FF;
+  border-radius: 3px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+div.l-action > button:hover {
+  color: white;
+  background: #9647FF;
+  border: 1px solid #9647FF;
+}
+
+/* Hide forever dialogue box */
+div.l-action.toggle-hide-dialogue,
+div.l-action.confirm-hide {
+  text-decoration: none;
+  margin: 10px 0 3px 50px;
+  text-align: left;
+  color: #818181;
+  cursor: default;
+}
+
+div.l-action.toggle-hide-dialogue > span,
+div.l-action.confirm-hide > span {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+a.l-hide-forever {
+  font-size: 14px;
+  display: block;
+  text-decoration: underline;
+  line-height: 20px;
+  width: 140px;
+  cursor: pointer;
+}
+
+div.toggle-hide-dialogue:before,
+div.l-action.confirm-hide:before {
+  height: 100px;
+}
+
+/* Close button styles */
+a.l-close {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  padding: 0 4px 1px 4px;
+  color: #939393;
+  font-size: 24px;
+  line-height: 24px;
+  height: 24px;
+  cursor: pointer;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+a.l-close:hover {
+  text-decoration: none;
+  color: #515357;
+}

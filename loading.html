@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Loading WhiteCarrot Extension...</title>
+<style>
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+  }
+  #wrapper {
+    height: 100%;
+    text-align: center;
+  }
+
+  #wrapper:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .loading-indicator {
+    display: inline-block;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #00a1dc;
+    border-top: 4px solid #ebebeb;
+    border-left: 4px solid #ebebeb;
+    vertical-align: middle;
+    -webkit-animation: loading 1.2s infinite linear;
+    animation: loading 1.2s infinite linear;
+  }
+
+  @keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+  }
+</style>
+<body>
+  <div id="wrapper">
+    <div class="loading-indicator"></div>
+  </div>
+</body>
